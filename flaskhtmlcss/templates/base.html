@@ -1,0 +1,44 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% block title %}
+        Hello World
+        {% endblock %}
+    </title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h1>Hello World</h1>
+
+        <nav>
+            <a href="{{ url_for('home') }}">Inicio</a>
+            <a href="{{ url_for('user', namePython='Josue') }}">Usuario</a>
+            <a href="{{ url_for('info', name='Josue', age=20) }}">Información</a>
+        </nav>
+    </header>
+
+    <main>
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Mi aplicación Flask</p>
+    </footer>
+
+</body>
+
+</html>
+```
